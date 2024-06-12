@@ -1,0 +1,21 @@
+.gradient {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 227, 154, 0.64) 0%,
+    rgba(255, 242, 210, 0.5248) 100%
+  );
+  color: #fc8026;
+  border-color: #fc8026;
+}
+
+.gray {
+  background-color: transparent;
+  color: #5b5b5b;
+  border-color: #5b5b5b;
+}
+
+.gray.active {
+  background-color: transparent;
+  color: #014ee6;
+  border-color: #014ee6;
+}
