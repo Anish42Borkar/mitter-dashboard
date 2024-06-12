@@ -1,13 +1,10 @@
 "use client";
 import {
-  MoreVertical,
-  ChevronLast,
-  ChevronFirst,
-  LayoutDashboard,
   ChevronLeft,
   ChevronRight,
+  MoreVertical
 } from "lucide-react";
-import { useContext, createContext, useState } from "react";
+import { createContext, useContext, useState } from "react";
 import {
   BookSvg,
   FileSvg,
