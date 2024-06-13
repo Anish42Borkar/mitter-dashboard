@@ -19,11 +19,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className="">
+        <div className="h-full mt-10 ">
           <SidebarStruct />
-          <div className="ml-16 ">
+          <div className="ml-16  h-full ">
             <Navbar />
-            <div className="mt-20">{children}</div>
+            <div className="mt-20 h-full  ">{children}</div>
           </div>
         </div>
       </body>

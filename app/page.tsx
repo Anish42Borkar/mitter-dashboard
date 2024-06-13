@@ -35,8 +35,8 @@ function Magnify() {
 
 export default function Home() {
   return (
-    <div className=" px-7 flex flex-col lg:flex-row gap-10   ">
-      <div>
+    <div className=" px-7 flex flex-col lg:flex-row gap-10 h-full ">
+      <div className=" main-layout pr-4 pb-5">
         <div className="my-10">
           <p className="text-xl font-semibold">Community</p>
           <div className="flex justify-between ">
@@ -81,7 +81,7 @@ export default function Home() {
           ))}
         </div>
       </div>
-      <div className="w-12/12 lg:w-5/12 my-10">
+      <div className="w-12/12 lg:w-5/12 my-10 pb-5">
         <div className="W-[389px] h-[107px] gradient-fire rounded-lg flex flex-col gap-4 justify-center items-center">
           <p className=" font-bold">
             Achieve Your Goals with Keep The Streak Alive

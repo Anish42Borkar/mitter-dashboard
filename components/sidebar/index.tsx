@@ -4,7 +4,7 @@ import {
   ChevronRight,
   MoreVertical
 } from "lucide-react";
-import { createContext, useContext, useState } from "react";
+import { ReactNode, createContext, useContext, useState } from "react";
 import {
   BookSvg,
   FileSvg,
@@ -14,10 +14,11 @@ import {
   QuestionMarkSvg,
   UserSvg,
 } from "../svg";
+import Link from "next/link";
 
 const SidebarContext = createContext(null as any);
 
-export default function Sidebar({ children }: any) {
+export default function Sidebar({ children }: {children:ReactNode}) {
   const [expanded, setExpanded] = useState(false);
 
   return (
@@ -90,11 +91,20 @@ export default function Sidebar({ children }: any) {
   );
 }
 
-export function SidebarItem({ icon, text, active, alert }: any) {
+type SidebarItemT = {
+  icon:JSX.Element; 
+  text:string; 
+  active?:boolean; 
+  alert?:string;
+  link:string;
+}
+
+export function SidebarItem({ icon, text, active, alert,link }: SidebarItemT) {
   const { expanded } = useContext(SidebarContext);
 
   return (
-    <li
+    <Link
+    href={link}
       className={`
         relative flex items-center py-2 px-2 mb-4
         font-medium rounded-md cursor-pointer
@@ -134,7 +144,7 @@ export function SidebarItem({ icon, text, active, alert }: any) {
           {text}
         </div>
       )}
-    </li>
+    </Link>
   );
 }
 export function SidebarStruct() {
@@ -144,11 +154,12 @@ export function SidebarStruct() {
         <SidebarItem
           icon={<QuestionMarkSvg w={25} h={25} />}
           text={"Dashboard"}
+          link  ='/'          
           active
         />
-        <SidebarItem icon={<NoteSvg w={25} h={25} />} text={"Notes"} />
-        <SidebarItem icon={<BookSvg w={25} h={25} />} text={"Bookmarks"} />
-        <SidebarItem icon={<GraphSvg w={25} h={25} />} text={"Growth"} />
+        <SidebarItem link  ='/' icon={<NoteSvg w={25} h={25} />} text={"Notes"} />
+        <SidebarItem link  ='/' icon={<BookSvg w={25} h={25} />} text={"Bookmarks"} />
+        <SidebarItem link  ='/' icon={<GraphSvg w={25} h={25} />} text={"Growth"} />
       </>
     </Sidebar>
   );
