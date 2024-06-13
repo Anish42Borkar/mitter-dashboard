@@ -6,7 +6,7 @@ import React from "react";
 
 const Details = () => {
   return (
-    <div className=" mx-10 xl:mx-72 pt-10 ">
+    <div className=" mx-10 xl:mx-72 py-10 ">
       <Link href="/">
         <div className="flex gap-3 items-center">
           <svg
